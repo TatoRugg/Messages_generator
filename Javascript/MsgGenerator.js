@@ -58,6 +58,22 @@ function generateMessage() {
     return `${randomTime}, ${randomSubject} ${randomVerb} ${randomAttribute}!`;
 }
 
-// testing the program 
-console.log(generateMessage());
+// Get the message container element
+const messageContainer = document.getElementById('message');
+
+// Get the generate button element
+const generateBtn = document.getElementById('generate-btn');
+
+// Function to handle the click event
+function handleClick() {
+    // Generate and display the message
+    const generatedMessage = generateMessage();
+    messageContainer.textContent = generatedMessage;
+
+    // Log the generated message
+    console.log("Generated message:", generatedMessage);
+}
+
+// Add event listener to the generate button
+generateBtn.addEventListener('click', handleClick);
 
